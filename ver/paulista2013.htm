@@ -1,0 +1,56 @@
+<?php
+ ini_set('default_charset','UTF-8');
+?>
+<html>
+<head>
+<title>Cadastros</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		
+	 	<style type="text/css" title="currentStyle">
+			@import "Styles/demo_table.css";
+		</style>
+		
+		<script type="text/javascript" language="javascript" src="Scripts/jquery.js"></script>
+		<script type="text/javascript" language="javascript" src="Scripts/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				//$('#paulista2013').dataTable();//
+			} );
+		</script>
+</head>
+<body>
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$result = $conn->query($sql);
+?>
+<h2>Pacientes Cadastrados</h2>
+<table id="paulista2013" border="1">
+<thead>
+	<tr>
+		<th>Nome</th><th>Endereço</th><th>Contato</th<th>Especialidade</th><th>Data de Recebimento</th><th>Data de Marcação</th><th>Ação</th> 
+	</tr>
+	
+</thead>
+	<tbody>
+		<tr>
+			<td>Nome</td><td>Endereço</td><td>Contato</td<td>Especialidade</td><td>Data de Recebimento</td><td>Data de Marcação</td><td>excluir</td> 
+		</tr>
+	<tbody>	
+</table>
+</body>
+</html>
+ 
+
