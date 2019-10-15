@@ -110,8 +110,8 @@ echo $head_style;
         <td ><?php echo $row['endereco'];?></td>
         <td ><?php echo $row['contato'];?></td>
         <td ><?php echo $row['sus'];?></td>
-        <td ><?echo "<a class='text-dark btn btn-outline-info' href='$url_alterar'>alterar</a>";?></td>  
-        <td ><?echo "<a class='text-dark btn btn-outline-danger' href='$url_exclir'>excluir</a>";?></td>
+        <td ><?php echo "<a class='text-dark btn btn-outline-info' href='$url_alterar'>alterar</a>";?></td>  
+        <td ><?php echo "<a class='text-dark btn btn-outline-danger' href='$url_exclir'>excluir</a>";?></td>
              
       </tr>
     

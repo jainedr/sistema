@@ -65,7 +65,7 @@ echo $head_style;
       <tr>
         <td ><?php echo $row['id'];?></td>
         <td ><?php echo $row['nome'];?></td> 
-        <td ><?echo "<a class='text-dark btn btn-outline-danger' href='$url_exclir'>excluir</a>";?></td>      
+        <td ><?php echo "<a class='text-dark btn btn-outline-danger' href='$url_exclir'>excluir</a>";?></td>      
       </tr>
    
     <?php

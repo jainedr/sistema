@@ -14,7 +14,8 @@ $PHP_SELF = $_SERVER['PHP_SELF'];
 if(isset($_POST['data_fin']) && isset($_POST['data_in'])){
     $data_in = $_POST['data_in'];
     $data_fin = $_POST['data_fin'];
-    $query = sprintf("SELECT * FROM marcacao WHERE data_marc = '0000-00-00' AND data_rec BETWEEN '$data_in' AND '$data_fin' order by data_rec desc");
+    $query = sprintf("SELECT * FROM marcacao WHERE data_marc BETWEEN '$data_in' AND '$data_fin' order by data_marc desc");
+    //$query = sprintf("SELECT * FROM marcacao WHERE data_marc = '0000-00-00' AND data_rec BETWEEN '$data_in' AND '$data_fin' order by data_rec desc");
     $dadosm = mysql_query($query, $connect) or die(mysql_error());
     $rowm = mysql_fetch_assoc($dadosm);
     $totalm = mysql_num_rows($dadosm);
@@ -47,8 +48,8 @@ echo $head_style;
 <form action="" method="post">
 <ul class="list-group text-info">
   <div class="form-group">
-  <li class="list-group-item"><label>Data inicial:</label><input class="form-control" type="date" name="data_in"></li>
-  <li class="list-group-item"><label>Data final:</label><input class="form-control" type="date" name="data_fin"></li>
+  <li class="list-group-item"><label>Data inicial:</label><input class="form-control" type="date" name="data_in" required></li>
+  <li class="list-group-item"><label>Data final:</label><input class="form-control" type="date" name="data_fin" required></li>
   <li class="list-group-item"><input class="form-control btn btn-success" type="submit" value="PESQUISAR"  name="PESQUISAR"></li>
   </ul>
   </form>

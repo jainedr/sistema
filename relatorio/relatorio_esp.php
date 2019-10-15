@@ -14,7 +14,7 @@ if(isset($_POST['espec'])){
     $especialidade = $_POST['espec'];
     $data_in = $_POST['data_in'];
     $data_fin = $_POST['data_fin'];
-    $query = sprintf("SELECT * FROM marcacao WHERE espec = '$especialidade' AND data_rec BETWEEN '$data_in' AND '$data_fin' order by data_rec desc");
+    $query = sprintf("SELECT * FROM marcacao WHERE espec ='$especialidade' AND data_rec BETWEEN '$data_in' AND '$data_fin' order by data_rec desc");
     $dadosm = mysql_query($query, $connect) or die(mysql_error());
     $rowm = mysql_fetch_assoc($dadosm);
     $totalm = mysql_num_rows($dadosm);
@@ -46,10 +46,10 @@ echo $head_style;
 <form action="" method="post">
 <ul class="list-group text-info">
   <div class="form-group">
-  <li class="list-group-item"><label>Data inicial:</label><input class="form-control" type="date" name="data_in"></li>
-  <li class="list-group-item"><label>Data final:</label><input class="form-control" type="date" name="data_fin"></li>
+  <li class="list-group-item"><label>Data inicial:</label><input class="form-control" type="date" name="data_in" required></li>
+  <li class="list-group-item"><label>Data final:</label><input class="form-control" type="date" name="data_fin" required></li>
     <li class="list-group-item"> <label for="sel1">Especialidade: <small><?php //echo " &nbsp;total $total";?></small></label>
-  <select class="form-control" id="sel1" name="espec">
+  <select class="form-control" id="sel1" name="espec" required>
   <option disabled selected>Especialidade...</option>
     <?php
   if($total > 0 ) {

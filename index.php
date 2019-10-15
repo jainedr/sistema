@@ -1,6 +1,7 @@
-<?
+<?php
 include $_SERVER['DOCUMENT_ROOT']."/conexao.php";
 include $_SERVER['DOCUMENT_ROOT']."/style.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -51,3 +52,4 @@ echo $head_style;
 </div>
 </body>
 </html>
+

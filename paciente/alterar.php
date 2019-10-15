@@ -46,15 +46,15 @@ if(isset($_POST['id'])){
 <div class="container">
 <!-- <a class="btn btn-outline-primary" href="ver/">Pesquisar Pacientes</a> -->
 <form method="POST" action="alterar.php">
-<input type="hidden" name="id" value="<? echo $row['id'];?>">
+<input type="hidden" name="id" value="<?php echo $row['id'];?>">
   <h4 class="text-center">Alterar dados do Paciente</h4>
  
   <ul class="list-group text-info">
   <div class="form-group">
-    <li class="list-group-item"><label>Nome:</label><input class="form-control" type="text" name="nome_paciente" value="<? echo $row['nome'];?>"></li>
-    <li class="list-group-item"><label>Endereço:</label><input class="form-control" type="text" name="endereco" value="<? echo $row['endereco'];?>"></li>
-    <li class="list-group-item"><label>Contato:</label><input class="form-control" type="text" name="contato" value="<? echo $row['contato'];?>"></li>
-    <li class="list-group-item"><label>CNS:</label><input class="form-control" type="text" name="sus" value="<? echo $row['sus'];?>"></li>
+    <li class="list-group-item"><label>Nome:</label><input class="form-control" type="text" name="nome_paciente" value="<?php echo $row['nome'];?>"></li>
+    <li class="list-group-item"><label>Endereço:</label><input class="form-control" type="text" name="endereco" value="<?php echo $row['endereco'];?>"></li>
+    <li class="list-group-item"><label>Contato:</label><input class="form-control" type="text" name="contato" value="<?php echo $row['contato'];?>"></li>
+    <li class="list-group-item"><label>CNS:</label><input class="form-control" type="text" name="sus" value="<?php echo $row['sus'];?>"></li>
     <li class="list-group-item"><input class="form-control btn btn-success" type="submit" value="Cadastrar" id="cadastrar" name="cadastrar"></li>
   </div>
   </ul>

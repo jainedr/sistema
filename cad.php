@@ -26,10 +26,10 @@ while ($row = mysql_fetch_assoc($dadoss)) {
   //$_SESSION["pacientes"][$_SESSION["pos"]] = $row['nome'];
   ?>
   <script> 
-  var_incrementa_array = "<?echo $row['nome'];?>";
+  var_incrementa_array = "<?php echo $row['nome'];?>";
   countries.push(var_incrementa_array);
   </script>
-  <?
+  <?php
   //$_SESSION["pos"]++;
   $num++;
 

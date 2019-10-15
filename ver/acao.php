@@ -86,7 +86,7 @@ if ($result->num_rows > 0) {
     <li class="list-group-item"><label>Nome:</label><input class="form-control" type="text" name="nome" value="<?php echo $nome_pessoa?>"></li>
     <li class="list-group-item"><label>Endereço:</label><input class="form-control" type="text" name="endereco" value="<?php echo $endereco?>"></li>
     <li class="list-group-item"><label>Contato:</label><input class="form-control" type="text" name="contato" value="<?php echo $contato?>"></li>
-    <li class="list-group-item"><label>Data de Marcação:</label><input class="form-control" type="date" name="data_marc"></li>
+    <li class="list-group-item"><label>Data de Marcação:</label><input class="form-control" type="date" name="data_marc" value="<?php echo $data_marc?>"></li>
     <li class="list-group-item"><input class="form-control btn btn-success" type="submit" value="Cadastrar" id="cadastrar" name="cadastrar"></li>
   </div>
   </ul>
