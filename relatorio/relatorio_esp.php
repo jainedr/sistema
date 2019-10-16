@@ -11,13 +11,23 @@ $PHP_SELF = $_SERVER['PHP_SELF'];
 
 
 if(isset($_POST['espec'])){
-    $especialidade = $_POST['espec'];
+
+  if($_POST['espec']==''){
     $data_in = $_POST['data_in'];
     $data_fin = $_POST['data_fin'];
-    $query = sprintf("SELECT * FROM marcacao WHERE espec ='$especialidade' AND data_rec BETWEEN '$data_in' AND '$data_fin' order by data_rec desc");
+    $query = sprintf("SELECT * FROM marcacao WHERE data_marc BETWEEN '$data_in' AND '$data_fin' order by data_marc desc");
     $dadosm = mysql_query($query, $connect) or die(mysql_error());
     $rowm = mysql_fetch_assoc($dadosm);
     $totalm = mysql_num_rows($dadosm);
+  }else{
+    $especialidade = $_POST['espec'];
+    $data_in = $_POST['data_in'];
+    $data_fin = $_POST['data_fin'];
+    $query = sprintf("SELECT * FROM marcacao WHERE espec ='$especialidade' AND data_marc BETWEEN '$data_in' AND '$data_fin' order by data_marc desc");
+    $dadosm = mysql_query($query, $connect) or die(mysql_error());
+    $rowm = mysql_fetch_assoc($dadosm);
+    $totalm = mysql_num_rows($dadosm);
+  }
 }
 
 ?>
